@@ -1,0 +1,9 @@
+#!/bin/bash
+
+project_root=`git rev-parse --show-toplevel`
+
+has_ds_store=`cat "$project_root"/.gitignore | grep ".DS_Store"`
+
+if [ -z "has_ds_store" ]
+  then echo ".DS_Store" >> "$project_root"/.gitignore
+fi
